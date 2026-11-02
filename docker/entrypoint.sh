@@ -16,9 +16,10 @@ colcon build \
     >/tmp/app_build.log 2>&1
 source /workspace/install/setup.bash
 
-# The native end-effector link is used for Gazebo attachments.  Do not inject
-# an auxiliary grasp link here: a low-mass fixed child link made Gazebo's
-# constraint solver unstable under Docker's emulated graphics/physics setup.
+# The native end-effector link is used for Gazebo attachments.  The workcell
+# adds a lightweight grasp_center link to each cube; keeping that helper on the
+# cube (rather than injecting a link into the robot model) avoids disturbing
+# the controller's Robotiq joint tree.
 
 export DISPLAY="${DISPLAY:-:1}"
 export QT_X11_NO_MITSHM=1

@@ -1,0 +1,30 @@
+repositories:
+  IFRA_LinkAttacher:
+    type: git
+    url: https://github.com/IFRA-Cranfield/IFRA_LinkAttacher.git
+    version: b056289ba93ccb549db98926dcbb9679642d0c8d
+
+  IFRA_ObjectPose:
+    type: git
+    url: https://github.com/IFRA-Cranfield/IFRA_ObjectPose.git
+    version: 25989d870b9d5b8ee46f902667179c25ff84ac1a
+
+  IFRA_LinkPose:
+    type: git
+    url: https://github.com/IFRA-Cranfield/IFRA_LinkPose.git
+    version: c5ee7654318b6026ba9c27de5ae704c56e0984cd
+
+  ros2_RobotiqGripper:
+    type: git
+    url: https://github.com/IFRA-Cranfield/ros2_RobotiqGripper.git
+    version: 5569e5a4527086e1d5925438b738424987f90132
+
+  ros2_SimRealRobotControl:
+    type: git
+    url: https://github.com/IFRA-Cranfield/ros2_SimRealRobotControl.git
+    version: 9645e14a36cd7411871c9572275e6435ab41dac7
+
+  gazebo_ros2_control:
+    type: git
+    url: https://github.com/ros-controls/gazebo_ros2_control.git
+    version: 9a3736c

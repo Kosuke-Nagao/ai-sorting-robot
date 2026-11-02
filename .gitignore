@@ -1,0 +1,27 @@
+# ROS / colcon
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary files and recordings
+*.bak
+*.log
+recordings/

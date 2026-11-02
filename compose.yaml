@@ -1,0 +1,26 @@
+name: ai-sorting-robot
+
+services:
+  simulator:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-sorting-simulator
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    shm_size: "2gb"
+    environment:
+      ROS_DOMAIN_ID: "42"
+      DISPLAY: ":1"
+      QT_X11_NO_MITSHM: "1"
+      LIBGL_ALWAYS_SOFTWARE: "1"
+      GALLIUM_DRIVER: "softpipe"
+      DRAW_USE_LLVM: "0"
+      OLLAMA_BASE_URL: "${OLLAMA_BASE_URL:-http://host.docker.internal:11434}"
+      OLLAMA_MODEL: "${OLLAMA_MODEL:-qwen2.5:3b}"
+    ports:
+      - "127.0.0.1:6080:6080"
+    volumes:
+      - ./src:/workspace/src

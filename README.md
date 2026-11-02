@@ -184,7 +184,8 @@ docker compose down
 │   ├── entrypoint.sh
 │   └── simplify_robotiq_visuals.py
 ├── docs/
-│   └── PROJECT_REPORT.md
+│   ├── create_submission_report.py
+│   └── 説明資料_PAI最終課題_honor.docx
 └── src/ai_sorting_robot/
     ├── package.xml
     ├── setup.py
@@ -214,7 +215,7 @@ docker compose down
 
 ## 課題レポート
 
-課題の概要、AI活用、工夫した点、結果、今後の課題は [`docs/PROJECT_REPORT.md`](docs/PROJECT_REPORT.md) にまとめています。
+提出用の説明資料は `docs/説明資料_PAI最終課題_honor.docx` に含めています。詳細なレポート原稿は提出物として別管理し、公開リポジトリには含めていません。
 
 ## 第三者コンポーネント
 

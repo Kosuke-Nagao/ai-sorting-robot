@@ -9,7 +9,7 @@ from docx.oxml.ns import qn
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "docs" / "説明資料_PAI最終課題_46467.docx"
+OUT = ROOT / "docs" / "説明資料_PAI最終課題_46467_更新版.docx"
 SUCCESS_IMAGE = Path(r"C:\Users\honor\AppData\Local\Temp\codex-clipboard-fe55792c-e02d-4c71-8b19-da427754e2f1.png")
 FAILURE_IMAGE = Path(r"C:\Users\honor\AppData\Local\Temp\codex-clipboard-e4b45e58-9de3-40b6-807b-21f0f2a1b5b9.png")
 
@@ -384,7 +384,6 @@ def main():
     add_heading(doc, "12 まとめ", 1)
     add_body(doc, "本課題では、ローカルLLMを自然言語インターフェースとして利用し、ROS 2・MoveIt 2・Gazebo上のUR3ロボットへ安全に接続した。色と左右という単純なタスクに絞ることで、AIの柔軟な解釈と、低水準制御の再現性を両立した。")
     add_body(doc, "検証では、把持位置の見え方、キューブの水平姿勢、配置後の状態遷移、シミュレーション負荷などの問題が現れたが、位置再取得、把持オフセット校正、固定リンク、姿勢正規化、ログの明確化によって改善した。今後はカメラ認識と接触ベースの閉ループ制御を追加し、見た目にも物理的にも自然な把持へ発展させる。")
-    add_body(doc, "以上により、合格ラインであるタスク実行動画とコード提出に加え、創造性、技術力、実用性、表現力の各観点を説明できる成果物とした。", first_line=False)
 
     # Core properties
     doc.core_properties.title = "AI×ロボティクスによる創造的タスクの実現"

@@ -1,6 +1,6 @@
 # 自然言語で指示できるAI仕分けロボット
 
-ROS 2 Humble、MoveIt 2、Gazebo Classic、Ollamaを組み合わせたロボットシミュレーションです。ユーザーが日本語または英語で指示すると、ローカルLLMが対象キューブと仕分け先を判断し、UR3ロボットとRobotiq 2F-85グリッパーがピック＆プレースを実行します。実機は使用しません。
+ROS 2 Humble、MoveIt 2、Gazebo Classic、Ollamaを組み合わせたロボットシミュレーションです。ユーザーが日本語で指示すると、ローカルLLMが対象キューブと仕分け先を判断し、UR3ロボットとRobotiq 2F-85グリッパーがピック＆プレースを実行します。実機は使用しません。
 
 ## 特徴
 
@@ -8,8 +8,8 @@ ROS 2 Humble、MoveIt 2、Gazebo Classic、Ollamaを組み合わせたロボッ�
 - LLM出力を限定JSONに変換し、色と仕分け先を検証してから動作
 - UR3、Robotiq 2F-85、MoveIt 2による経路計画
 - Gazebo上に作業台、3色のキューブ、左右の仕分けマットを自動生成
-- キューブの実位置を把持直前に再取得し、ずれを補正
-- 把持・搬送・配置時の姿勢と指先位置を校正
+- キューブの実位置を保持直前に再取得し、ずれを補正
+- 保持・搬送・配置時の姿勢と指先位置を校正
 - DockerとnoVNCにより、Windows上でもブラウザから再現可能
 
 ## システム構成
@@ -183,9 +183,6 @@ docker compose down
 ├── docker/
 │   ├── entrypoint.sh
 │   └── simplify_robotiq_visuals.py
-├── docs/
-│   ├── create_submission_report.py
-│   └── 説明資料_PAI最終課題_honor.docx
 └── src/ai_sorting_robot/
     ├── package.xml
     ├── setup.py
@@ -202,7 +199,7 @@ docker compose down
 - `llm_parser.py`: Ollamaへの問い合わせ、JSON化、曖昧指示の拒否
 - `natural_sort.py`: 自然言語入力からロボット実行までの入口
 - `command_schema.py`: 色と仕分け先の許可リストおよび検証
-- `pick_place.py`: 経路計画、グリッパー制御、把持・搬送・配置
+- `pick_place.py`: 経路計画、グリッパー制御、保持・搬送・配置
 - `spawn_workcell.py`: 作業台、仕分けマット、3色キューブの生成
 - `Dockerfile`: ROS/Gazebo/MoveIt環境と依存リポジトリの固定
 
@@ -215,7 +212,7 @@ docker compose down
 
 ## 課題レポート
 
-提出用の説明資料は `docs/説明資料_PAI最終課題_honor.docx` に含めています。詳細なレポート原稿は提出物として別管理し、公開リポジトリには含めていません。
+課題の概要、AI活用、工夫した点、結果、今後の課題は [`説明資料_PAI最終課題_46467.pdf`]にまとめています。に含めています。詳細なレポート原稿は提出物として別管理し、公開リポジトリには含めていません。
 
 ## 第三者コンポーネント
 
